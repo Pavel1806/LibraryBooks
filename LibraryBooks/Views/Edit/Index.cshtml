@@ -1,0 +1,49 @@
+﻿
+<div class="General2">
+    <div class="User">
+        Библиотека
+    </div>
+    <div class="profileTable">
+        <div class="inProfileTable">Изменение книги</div>
+        <form class="profileForm" action="~/Edit/EditBook?oldTitle=@ViewBag.Title" method="post">
+            <div>
+                <label for="name">Автор</label>
+                <input class="input" placeholder="Автор" type="text" name="author" value="@ViewBag.Author">
+            </div>
+            <div>
+                <label for="book">Название книги</label>
+                <input class="input" placeholder="Название книги" type="text" name="title" value="@ViewBag.Title">
+            </div>
+
+            <div>
+                <label for="year">Год издания</label>
+                <input class="input" placeholder="Год издания" type="text" name="year" value="@ViewBag.YearOfPublication">
+            </div>
+            <div>
+                <label for="quantityPage">Количество страниц</label>
+                <input class="input" placeholder="Количество страниц" type="text" name="number" value="@ViewBag.NumberOfPages">
+            </div>
+            <div>
+                <label for="genre">Жанр</label>
+                <select name="genre">
+                    
+                    @if (ViewBag.Genre == "Роман")
+                    {
+                <option selected>Роман</option>
+                <option>Детектив</option>
+                    }
+                    else
+                    {
+                <option>Роман</option>
+                <option selected>Детектив</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <input class="submit" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+    
+</div>

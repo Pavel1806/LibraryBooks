@@ -1,0 +1,95 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="General">
+    <div class="Users">
+        Библиотека
+    </div>
+    <div class="divMenu">
+        <div class="imgButtonLeft">
+            <a href="/register/index"><img src="Plus.png"></a>
+        </div>
+        <div class="imgButton">
+            <button class="edit"><img src="change.png"></button>
+        </div>
+        <div class="imgButton">
+            <button class="delete"><img src="del.png"></button>
+        </div>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Название книги">
+
+        <div class="divDepartment">Жанр</div>
+        <select class="selectDepartment">
+            <option value="All" selected>All</option>
+            <option value="Roman">Романы</option>
+            <option value="Detective">Детективы</option>
+        </select>
+    </div>
+    <div class="divTable">
+        <table id="myTable">
+            <tr class="header">
+                <th>
+                    Автор
+                </th>
+                <th>
+                    Название книги
+                </th>
+                <th>
+                    Год выпуска
+                </th>
+                <th>
+                    Кол-во страниц
+                </th>
+                <th>
+                    Жанр
+                </th>
+            </tr>
+            @foreach (Book item in Model)
+            {
+                if (item.Genre == "Роман")
+                {
+                    <tr position="Roman">
+                        <td>
+                            @item.Author
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td>
+                            @item.YearOfPublication
+                        </td>
+                        <td>
+                            @item.NumberOfPages
+                        </td>
+                        <td>
+                            @item.Genre
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr position="Detective">
+                        <td>
+                            @item.Author
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td>
+                            @item.YearOfPublication
+                        </td>
+                        <td>
+                            @item.NumberOfPages
+                        </td>
+                        <td>
+                            @item.Genre
+                        </td>
+                    </tr>
+                }
+
+            }
+        </table>
+    </div>
+</div>

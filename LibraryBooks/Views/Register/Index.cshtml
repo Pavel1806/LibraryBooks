@@ -1,0 +1,38 @@
+﻿
+<div class="General2">
+    <div class="User">
+        Библиотека
+    </div>
+    <div class="profileTable" style="height: 300px;">
+        <div class="inProfileTable">Создание книги<p style="font-size: 12px; line-height:12px; margin: 0"></p></div>
+        <form class="profileForm" action="~/Register/AddingNewBook" method="post">
+            <div>
+                <label for="name">Автор</label>
+                <input class="input" placeholder="Автор" type="text" name="name">
+            </div>
+            <div>
+                <label for="book">Название книги</label>
+                <input class="input" placeholder="Название книги" type="text" name="book">
+            </div>
+
+            <div>
+                <label for="year">Год издания</label>
+                <input class="input" placeholder="Год издания" type="text" name="year">
+            </div>
+            <div>
+                <label for="quantityPage">Количество страниц</label>
+                <input class="input" placeholder="Количество страниц" type="text" name="quantityPage">
+            </div>
+            <div>
+                <label for="genre">Жанр</label>
+                <select name="genre">
+                    <option>Роман</option>
+                    <option>Детектив</option>
+                </select>
+            </div>
+            <div>
+                <input class="submit" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+</div>
